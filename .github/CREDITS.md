@@ -218,13 +218,6 @@
             <br />
             <sub><b>Magical-heyrovsky</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/mrpavan">
-            <img src="https://avatars.githubusercontent.com/u/20220426?v=4" width="80;" alt="mrpavan"/>
-            <br />
-            <sub><b>Pavan</b></sub>
-        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->
