@@ -5629,13 +5629,20 @@ This project exists thanks to all the people who've helped build and maintain it
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/AshboDev">
+            <img src="https://avatars.githubusercontent.com/u/14421977?v=4" width="80;" alt="AshboDev"/>
+            <br />
+            <sub><b>Ash Scott</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
         <a href="https://github.com/WardPearce">
             <img src="https://avatars.githubusercontent.com/u/27844174?v=4" width="80;" alt="WardPearce"/>
             <br />
             <sub><b>Ward</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Wesley-Ryan">
             <img src="https://avatars.githubusercontent.com/u/69822796?v=4" width="80;" alt="Wesley-Ryan"/>
@@ -5670,15 +5677,15 @@ This project exists thanks to all the people who've helped build and maintain it
             <br />
             <sub><b>Azzam S.A</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/colenh">
             <img src="https://avatars.githubusercontent.com/u/40342475?v=4" width="80;" alt="colenh"/>
             <br />
             <sub><b>Cole</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/jxhn">
             <img src="https://avatars.githubusercontent.com/u/1396009?v=4" width="80;" alt="jxhn"/>
@@ -5712,13 +5719,6 @@ This project exists thanks to all the people who've helped build and maintain it
             <img src="https://avatars.githubusercontent.com/u/5941125?v=4" width="80;" alt="pnodet"/>
             <br />
             <sub><b>Paul Nodet</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/poegl">
-            <img src="https://avatars.githubusercontent.com/u/57896970?v=4" width="80;" alt="poegl"/>
-            <br />
-            <sub><b>WP</b></sub>
         </a>
     </td></tr>
 </table>
