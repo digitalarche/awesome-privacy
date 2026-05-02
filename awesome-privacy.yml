@@ -4687,12 +4687,14 @@ categories:
 
       - name: BeeCount
         description: |
-          A privacy-first, cross-platform (Android/iOS/Web) personal expense tracker
-          with offline-first design and multi-cloud sync options: self-hosted BeeCount
-          Cloud, iCloud, Supabase, WebDAV, or S3 — your data stays under your control.
-          Optional AI-powered bill image recognition runs locally where supported.
+          Privacy-first cross-platform personal expense tracker (Android/iOS/Web)
+          with offline-first design. Multi-cloud sync options — self-hosted
+          BeeCount Cloud, iCloud, Supabase, WebDAV or S3 — keep data under user control.
         url: https://beecount-website.pages.dev
+        icon: https://raw.githubusercontent.com/TNT-Likely/BeeCount/main/assets/logo2.png
         github: TNT-Likely/BeeCount
+        androidApp: https://play.google.com/store/apps/details?id=com.tntlikely.beecount
+        iosApp: https://apps.apple.com/app/id6754611670
         followWith: Self-hosted
         openSource: true
 
