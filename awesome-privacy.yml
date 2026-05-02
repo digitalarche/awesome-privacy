@@ -4685,6 +4685,17 @@ categories:
         github: actualbudget/actual
         openSource: true
 
+      - name: BeeCount
+        description: |
+          A privacy-first, cross-platform (Android/iOS/Web) personal expense tracker
+          with offline-first design and multi-cloud sync options: self-hosted BeeCount
+          Cloud, iCloud, Supabase, WebDAV, or S3 — your data stays under your control.
+          Optional AI-powered bill image recognition runs locally where supported.
+        url: https://beecount-website.pages.dev
+        github: TNT-Likely/BeeCount
+        followWith: Self-hosted
+        openSource: true
+
       notableMentions: |
         Spreadsheets remain a popular choice for managing budgets and financial planning.
         [Collabora](https://nextcloud.com/collaboraonline) or
