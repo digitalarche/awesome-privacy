@@ -610,7 +610,7 @@ categories:
         tosdrId: 7638
         iosApp: https://apps.apple.com/us/app/simplex-chat-secure-messenger/id1605771084
         androidApp: chat.simplex.app
-        icon: https://github.com/simplex-chat/simplex-chat/blob/stable/media-logos/simplex-symbol-light.png
+        icon: https://simplex.chat/img/new/logo-symbol-light.svg
         subreddit: SimpleXChat
         description: |
           Simplex is gaining popularity as a secure and private messaging app renowned
@@ -622,7 +622,7 @@ categories:
 
       - name: XMPP
         url: https://xmpp.org
-        icon: https://xmpp.org/favicon.ico
+        icon: https://xmpp.org/apple-touch-icon.png
         openSource: true
         github: xsf/xmpp.org
         description: |
