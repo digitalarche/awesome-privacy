@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-28T17:33:05Z",
+  "generatedAt": "2026-05-12T11:29:20Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -122,6 +122,7 @@
     "ccc7b43aa598acf709f8f5c77f987c2b95ec2921",
     "d027f6bf3eb4420f106b6778fa302f326a05f08c",
     "d397fc760983ced96c6d187305c0ea210ac6cece",
+    "d835706239a1a20d3cd98d511a82038823dbef9e",
     "da7374ad750bd07bc42649cfdd09edd14901cc40",
     "dd6ae4904bf653b577869e6516907db1782d5884",
     "dec42f0572b2f52fad5ccd5f52ae6f4ae0b18721",
@@ -202,9 +203,37 @@
     504,
     511,
     513,
-    522
+    522,
+    526,
+    528,
+    530,
+    533,
+    541
   ],
   "entries": [
+    {
+      "date": "2026-05-12",
+      "sha": "d835706239a1a20d3cd98d511a82038823dbef9e",
+      "pr": {
+        "number": 531,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/531",
+        "author": "TNT-Likely",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/9278923?v=4"
+      },
+      "changes": {
+        "services": {
+          "added": [
+            {
+              "name": "BeeCount",
+              "category": "Finance",
+              "section": "Secure Budgeting"
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-04-28",
       "sha": "4313ea5f7d58117889174d4d02f64127fa670dc9",
@@ -4370,6 +4399,56 @@
     }
   ],
   "rejections": [
+    {
+      "date": "2026-05-12",
+      "title": "Add A/SIDE — Signal Protocol encrypted private social network",
+      "pr": {
+        "number": 541,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/541",
+        "author": "realadeel",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/15347?v=4"
+      }
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Add rosec in Password Managers",
+      "pr": {
+        "number": 533,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/533",
+        "author": "jmylchreest",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/912349?v=4"
+      }
+    },
+    {
+      "date": "2026-05-02",
+      "title": "Add FastDDL to File Drop section",
+      "pr": {
+        "number": 530,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/530",
+        "author": "BotMakesCrypto",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/264922709?v=4"
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "title": "Add qrbake (privacy-respecting QR code generator)",
+      "pr": {
+        "number": 528,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/528",
+        "author": "kepago",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/278864611?v=4"
+      }
+    },
+    {
+      "date": "2026-04-29",
+      "title": "Add Maskmail in Mail Forwarding",
+      "pr": {
+        "number": 526,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/526",
+        "author": "leonmeka",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/15350962?v=4"
+      }
+    },
     {
       "date": "2026-04-21",
       "title": "Add 4 online privacy-benchmark tools to Online Tools",
