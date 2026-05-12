@@ -265,7 +265,7 @@ const makeSoftwareSchema = () => {
 			privacyPolicyLink={privacyPolicyLink}
 		/>
 		{
-			privacyData && privacyData.parameters.points.length > 0 && (
+			privacyData && privacyData.parameters?.points?.length > 0 && (
 				<section>
 					<h2>{name} Privacy Policy</h2>
 					<PrivacyPolicyDetails privacyData={privacyData} />
