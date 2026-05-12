@@ -74,11 +74,13 @@
     website: solidIcons.faGlobe,
     sourceCode: solidIcons.faCodeBranch,
     viewReport: solidIcons.faShieldHalved,
+    externalLink: solidIcons.faArrowUpRightFromSquare,
 
     //Misc
     ratingStar: solidIcons.faStar,
     saveListing: solidIcons.faBookmark,
     noTrackers: solidIcons.faShieldCheck,
+    warning: solidIcons.faTriangleExclamation,
   };
 
   let { iconName }: { iconName: string } = $props();

@@ -59,7 +59,7 @@ const categories = (await fetchData() as AwesomePrivacy)?.categories || [];
 								</a>
 							</h3>
 							<section class="grid">
-								{section.services.map((service: Service) => (
+								{[...section.services].sort((a, b) => a.name.localeCompare(b.name)).map((service: Service) => (
 									<ServiceCard
 										service={service}
 										sectionName={section.name}

@@ -27,13 +27,17 @@ const {
 	sectionName,
 	categoryName,
 } = Astro.props;
+
+const sortedServices = [...(services || [])].sort((a, b) =>
+	a.name.localeCompare(b.name),
+);
 ---
 
 <section>
 	{
-		services && services.length > 0 ? (
+		sortedServices.length > 0 ? (
 			<ul>
-				{services.map((service: Service) => (
+				{sortedServices.map((service: Service) => (
 					<li id={slugify(service.name)}>
 						<DeleteListing
 							client:load
