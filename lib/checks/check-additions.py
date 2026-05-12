@@ -17,6 +17,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 DATA_PATH = os.path.join(PROJECT_ROOT, "awesome-privacy.yml")
 DIFF_PATH = "/tmp/pr-diff.json"
 FINDINGS_PATH = "/tmp/findings-data.json"
+SCHEMA_ERRORS_PATH = "/tmp/schema-errors.json"
+MAX_SCHEMA_ERRORS_SHOWN = 10
 
 REQUIRED_FIELDS = ("name", "description", "url", "icon")
 
@@ -242,12 +244,35 @@ def check_opensource_github(diff):
     return None
 
 
+def load_schema_errors():
+    """Load detailed schema/YAML errors written by validate-awesome-privacy.py, if any."""
+    try:
+        with open(SCHEMA_ERRORS_PATH) as f:
+            data = json.load(f)
+        return [str(x) for x in data] if isinstance(data, list) else []
+    except (OSError, ValueError):
+        return []
+
+
+def schema_findings():
+    """Return one error-level finding per detailed schema error, or the generic fallback."""
+    errors = load_schema_errors()
+    if not errors:
+        return [{"msg": SCHEMA_MSG, "level": "error"}]
+    shown = errors[:MAX_SCHEMA_ERRORS_SHOWN]
+    out = [{"msg": e, "level": "error"} for e in shown]
+    extra = len(errors) - len(shown)
+    if extra > 0:
+        out.append({"msg": f"…and {extra} more schema error(s)", "level": "error"})
+    return out
+
+
 def main():
     findings = []
     critical = False
     try:
         if os.environ.get("SCHEMA_OUTCOME") == "failure":
-            findings.append({"msg": SCHEMA_MSG, "level": "error"})
+            findings.extend(schema_findings())
 
         diff = load_json(DIFF_PATH)
         head = load_yaml_data(DATA_PATH)
