@@ -163,7 +163,11 @@ const screenshotUrl = `https://screenshot-cache.as93.workers.dev/${url}`;
     <img class="preview-shot" src={screenshotUrl} alt="Website preview" width="300" height="50" />
     <div class="link-to-web-check">
       <Button url={`https://web-check.xyz/check/${url}`}>
-        <span>View full report at</span><br /><b class="web-check-title">web-check.xyz</b>
+      	<img width="32" src="https://web-check.xyz/favicon.svg" />
+       <div class="btn-text">
+      	  <span>View full report at</span>
+          <b class="web-check-title">web-check.xyz</b>
+       	</div>
       </Button>
     </div>
 
@@ -263,7 +267,7 @@ const screenshotUrl = `https://screenshot-cache.as93.workers.dev/${url}`;
   }
 
   .link-to-web-check {
-    width: 180px;
+    width: 260px;
     float: right;
     font-size: var(--text-base);
     transform: scale(0.8);
@@ -278,6 +282,15 @@ const screenshotUrl = `https://screenshot-cache.as93.workers.dev/${url}`;
     }
     .web-check-title {
       font-size: var(--text-lg);
+    }
+    :global(a) {
+    	display: flex;
+      gap: var(--space-md);
+    	.btn-text {
+	    	display: flex;
+	     	flex-direction: column;
+				text-align: left;
+     	}
     }
   }
 
