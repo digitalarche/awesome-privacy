@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T11:29:20Z",
+  "generatedAt": "2026-05-12T16:56:51Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -124,6 +124,7 @@
     "d397fc760983ced96c6d187305c0ea210ac6cece",
     "d835706239a1a20d3cd98d511a82038823dbef9e",
     "da7374ad750bd07bc42649cfdd09edd14901cc40",
+    "dbb44f56681d9456e5808737b8c3873c0c7e8af5",
     "dd6ae4904bf653b577869e6516907db1782d5884",
     "dec42f0572b2f52fad5ccd5f52ae6f4ae0b18721",
     "df686cd77a1ff89ba9a318089d46c1585b63b572",
@@ -203,14 +204,53 @@
     504,
     511,
     513,
+    520,
+    521,
     522,
+    523,
     526,
+    527,
     528,
     530,
     533,
-    541
+    541,
+    542
   ],
   "entries": [
+    {
+      "date": "2026-05-12",
+      "sha": "dbb44f56681d9456e5808737b8c3873c0c7e8af5",
+      "pr": {
+        "number": 544,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/544",
+        "author": "ltguillaume",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/4777345?v=4"
+      },
+      "changes": {
+        "services": {
+          "modified": [
+            {
+              "name": "SimpleX",
+              "category": "Communication",
+              "section": "Encrypted Messaging",
+              "fields": [
+                "icon"
+              ]
+            },
+            {
+              "name": "XMPP",
+              "category": "Communication",
+              "section": "Encrypted Messaging",
+              "fields": [
+                "icon"
+              ]
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-12",
       "sha": "d835706239a1a20d3cd98d511a82038823dbef9e",
@@ -4401,6 +4441,16 @@
   "rejections": [
     {
       "date": "2026-05-12",
+      "title": "Add UltraLocked - Secure Enclave-backed iOS file vault with duress mode",
+      "pr": {
+        "number": 542,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/542",
+        "author": "realadeel",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/15347?v=4"
+      }
+    },
+    {
+      "date": "2026-05-12",
       "title": "Add A/SIDE — Signal Protocol encrypted private social network",
       "pr": {
         "number": 541,
@@ -4440,6 +4490,16 @@
       }
     },
     {
+      "date": "2026-05-12",
+      "title": "Add BChat to Encrypted Messaging Section",
+      "pr": {
+        "number": 527,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/527",
+        "author": "malvinIsabelle-max",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/267908393?v=4"
+      }
+    },
+    {
       "date": "2026-04-29",
       "title": "Add Maskmail in Mail Forwarding",
       "pr": {
@@ -4447,6 +4507,36 @@
         "url": "https://github.com/Lissy93/awesome-privacy/pull/526",
         "author": "leonmeka",
         "authorAvatar": "https://avatars.githubusercontent.com/u/15350962?v=4"
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "title": "Adds Threat Model Builder to Online Tools",
+      "pr": {
+        "number": 523,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/523",
+        "author": "Predaxia",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/276385529?v=4"
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "title": "Adds Voidly Messenger to Encrypted Messaging",
+      "pr": {
+        "number": 521,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/521",
+        "author": "EmperorMew",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/42871398?v=4"
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "title": "Add HackMyIP to Online Tools",
+      "pr": {
+        "number": 520,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/520",
+        "author": "CodeLong888",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/151114132?v=4"
       }
     },
     {
