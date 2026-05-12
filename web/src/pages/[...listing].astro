@@ -22,6 +22,7 @@ import { fetchWebsiteInfo } from '@utils/fetch-website-info';
 import { fetchDockerData } from '@utils/fetch-docker-instructions';
 import { fetchIosInfo } from '@utils/fetch-ios-info';
 import { fetchAndroidInfo } from '@utils/fetch-android-info';
+import { fetchPlexusInfo } from '@utils/fetch-plexus-info';
 import { fetchDiscordInfo } from '@utils/fetch-discord-info';
 import { fetchRedditInfo } from '@utils/fetch-reddit-info';
 import { site } from '@utils/config';
@@ -142,6 +143,7 @@ const githubData = github ? await fetchGitHubStats(github) : null;
 const privacyData = tosdrId ? await fetchTosdrPrivacy(tosdrId) : null;
 const iosData = iosApp ? await fetchIosInfo(iosApp) : null;
 const androidData = androidApp ? await fetchAndroidInfo(androidApp) : null;
+const plexusData = androidApp ? await fetchPlexusInfo(androidApp) : null;
 const discordData = discordInvite
 	? await fetchDiscordInfo(discordInvite)
 	: null;
@@ -287,10 +289,13 @@ const makeSoftwareSchema = () => {
 			)
 		}
 		{
-			androidData && !androidData.error && (
+			((androidData && !androidData.error) || plexusData) && (
 				<section>
 					<h2>{name} Android App</h2>
-					<AndroidAppDetailedInfo androidData={androidData} />
+					<AndroidAppDetailedInfo
+						androidData={androidData}
+						plexusData={plexusData}
+					/>
 				</section>
 			)
 		}
