@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T16:56:51Z",
+  "generatedAt": "2026-05-13T09:47:02Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -107,6 +107,7 @@
     "b718d9cd6c2f4b9c6129d4c9d6b70c1968a137f8",
     "b8b8fa712eba68ffcbf4812d12e5c5b9b45c075f",
     "ba27593a5dcbfd58b4b9079277c54b0836d183d8",
+    "bb76bb8677c29932746d94b0de20ac5bbe7e1447",
     "bbafb2908e2189ef959ebc5fa8ccfab91402f62f",
     "bc2f085c6329b3e60b29017a40c5413b494679e8",
     "bc99ed2b8704c26e3165320efe62dd863521b26e",
@@ -214,9 +215,33 @@
     530,
     533,
     541,
-    542
+    542,
+    546
   ],
   "entries": [
+    {
+      "date": "2026-05-13",
+      "sha": "bb76bb8677c29932746d94b0de20ac5bbe7e1447",
+      "pr": {
+        "number": 543,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/543",
+        "author": "Lissy93",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/1862727?v=4"
+      },
+      "changes": {
+        "services": {
+          "removed": [
+            {
+              "name": "CalyxOS",
+              "category": "Operating Systems",
+              "section": "Mobile Operating Systems"
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-12",
       "sha": "dbb44f56681d9456e5808737b8c3873c0c7e8af5",
@@ -4439,6 +4464,16 @@
     }
   ],
   "rejections": [
+    {
+      "date": "2026-05-13",
+      "title": "Add Dakera to AI — self-hosted privacy-preserving agent memory server",
+      "pr": {
+        "number": 546,
+        "url": "https://github.com/Lissy93/awesome-privacy/pull/546",
+        "author": "ferhimedamine",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/7574816?v=4"
+      }
+    },
     {
       "date": "2026-05-12",
       "title": "Add UltraLocked - Secure Enclave-backed iOS file vault with duress mode",
