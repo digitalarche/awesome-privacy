@@ -3306,15 +3306,6 @@ categories:
           Very affordable encrypted storage provider, with cross-platform apps. Starts as £1.50/month for 150 GB
           or £3.33/month for 1 TB.
 
-      - name: Sync.com
-        url: https://www.sync.com
-        tosdrId: 698
-        androidApp: com.sync.mobileapp
-        iosApp: https://apps.apple.com/us/app/sync-secure-cloud-storage/id917410266
-        description: |
-          Secure file sync, sharing, collaboration and backup for individuals, small businesses and sole practitioners.
-          Starts at $8/month for 2 TB.
-
       - name: Peergos
         url: https://peergos.org/
         androidApp: peergos.android
