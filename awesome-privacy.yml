@@ -3291,6 +3291,8 @@ categories:
       - name: Tresorit
         url: https://tresorit.com
         tosdrId: 1696
+        androidApp: com.tresorit.mobile
+        iosApp: https://apps.apple.com/us/app/tresorit/id722163232
         description: |
           End-to-end encrypted zero knowledge file storage, syncing and sharing provider, based in Switzerland.
           The app is cross-platform, user-friendly client and with all expected features. £6.49/month for 500 GB.
@@ -3298,6 +3300,8 @@ categories:
       - name: IceDrive
         url: https://icedrive.net
         tosdrId: 3118
+        androidApp: com.icedrive.app
+        iosApp: https://apps.apple.com/us/app/icedrive-cloud-storage/id6739429121
         description: |
           Very affordable encrypted storage provider, with cross-platform apps. Starts as £1.50/month for 150 GB
           or £3.33/month for 1 TB.
@@ -3305,12 +3309,15 @@ categories:
       - name: Sync.com
         url: https://www.sync.com
         tosdrId: 698
+        androidApp: com.sync.mobileapp
+        iosApp: https://apps.apple.com/us/app/sync-secure-cloud-storage/id917410266
         description: |
           Secure file sync, sharing, collaboration and backup for individuals, small businesses and sole practitioners.
           Starts at $8/month for 2 TB.
 
       - name: Peergos
         url: https://peergos.org/
+        androidApp: peergos.android
         description: |
           A peer-to-peer end-to-end encrypted global filesystem with fine grained access control. Provides a secure
           and private space online where you can store, share and view your photos, videos, music and documents.
@@ -3321,6 +3328,8 @@ categories:
         url: https://internxt.com/
         icon: https://internxt.com/favicon.ico
         tosdrId: 4176
+        androidApp: com.internxt.cloud
+        iosApp: https://apps.apple.com/us/app/internxt/id1465869889
         description: |
           Store your files in total privacy. Internxt Drive is a zero-knowledge cloud storage service based on best-in-class
           privacy and security. Made in Spain. Open-source mobile and desktop apps. 10GB FREE and Paid plans starting from
@@ -3329,12 +3338,16 @@ categories:
       - name: FileN
         url: https://filen.io/
         tosdrId: 6820
+        androidApp: io.filen.app
+        iosApp: https://apps.apple.com/us/app/filen-cloud-storage/id1549224518
         description: |
           Zero knowledge end-to-end encrypted affordable cloud storage made in Germany. Open-source mobile and desktop apps.
           10GB FREE with paid plans starting at €0.92/month for 100GB.
 
       - name: Koofr
         url: https://koofr.eu
+        androidApp: net.koofr.app
+        iosApp: https://apps.apple.com/us/app/koofr/id714802401
         description: |
           GDPR compliant storage (web/desktop/mobile/WebDAV/RClone) with a sensible privacy policy.
           Has optional open-source client-side encryption, compatible with RClone. Can connect to other cloud services
