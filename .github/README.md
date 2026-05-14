@@ -103,7 +103,7 @@ corporations, governments, and hackers from logging, storing or selling your per
 	- [News Readers](#news-readers) (1)
 	- [Proxy Sites](#proxy-sites) (4)
 - **Media**
-	- [File Converters](#file-converters) (1)
+	- [File Converters](#file-converters) (2)
 - **Creativity**
 	- [Image Editors](#image-editors) (8)
 	- [Video Editors](#video-editors) (7)
@@ -2198,6 +2198,7 @@ TikTok, and more.*
 ### File Converters
 
 - **[<img src='https://ffmpeg.org/favicon.ico' width='14' alt='' /> FFmpeg](https://ffmpeg.org/)** - A complete, cross-platform solution to record, convert, and stream audio and video. It's the industry standard multimedia framework, handling a vast range of formats. As a command-line tool, it guaran[…](https://awesome-privacy.xyz/media/file-converters/ffmpeg "View full FFmpeg report") 
+- **[<img src='https://vert.sh/lettermark.jpg' width='14' alt='' /> VERT](https://vert.sh)** - Web-based file conversion utility, which runs locally on your device using WebAssembly. Supports 250+ formats across images, audio, documents, and video. 
 
 <p align="right"><sup><a href="#top">⬆️ [Back to Top]</a></sub></p>
 

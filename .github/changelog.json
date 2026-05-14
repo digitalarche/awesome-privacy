@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T08:40:29Z",
+  "generatedAt": "2026-05-14T09:28:32Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -68,6 +68,7 @@
     "698e818f03fda883ec55a630bd9380d7cf214bb8",
     "69f6a2755a08caaa814201be36c9a809961b7f78",
     "6cf287d925558028acb263fbafa7eb412abfed17",
+    "6d21892e771f8ca4a64b772e211b32db166626a6",
     "7177ba26e054a6f173ec451b420ee64d5fdef69b",
     "75ad504f96da49df98dc30842d820fd74c85deb0",
     "78d83c0266281333143f9a0cb5e6d6af6439befd",
@@ -220,9 +221,34 @@
     542,
     546,
     547,
-    551
+    550,
+    551,
+    552
   ],
   "entries": [
+    {
+      "date": "2026-05-14",
+      "sha": "6d21892e771f8ca4a64b772e211b32db166626a6",
+      "pr": {
+        "number": 430,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/430",
+        "author": "lissy93",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/1862727?v=4"
+      },
+      "changes": {
+        "services": {
+          "added": [
+            {
+              "name": "VERT",
+              "category": "Media",
+              "section": "File Converters"
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-14",
       "sha": "9554aea077ef26edde7570d6ba0cdbdd83bc0535",
@@ -4571,6 +4597,26 @@
     }
   ],
   "rejections": [
+    {
+      "date": "2026-05-14",
+      "title": "Add Inspectfiles.com",
+      "pr": {
+        "number": 552,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/552",
+        "author": "PaoloCounter",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/205430380?v=4"
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Adds ConvertUnlimited to Metadata Removal",
+      "pr": {
+        "number": 550,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/550",
+        "author": "dunkin-novice",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/198360645?v=4"
+      }
+    },
     {
       "date": "2026-05-13",
       "title": "Addition of BChat to Encrypted messaging section",
