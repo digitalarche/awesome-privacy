@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T16:18:09Z",
+  "generatedAt": "2026-05-14T08:40:29Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -86,6 +86,7 @@
     "8ee48cc161dd204f6eea70e8988ad3d4eb17e0c7",
     "90d8ef9b928ed9abb25b3c2480717e6174451488",
     "9138eddcdec8ede666db70bc44d98b33c9f9653e",
+    "9554aea077ef26edde7570d6ba0cdbdd83bc0535",
     "97087e9763354540028fc571aca552a83464cc1d",
     "99cf5f51acf1b8ac09558bf419abe18586233668",
     "9ad78e8af115f4c8115083d956da93d12a1a03f2",
@@ -218,9 +219,33 @@
     541,
     542,
     546,
-    547
+    547,
+    551
   ],
   "entries": [
+    {
+      "date": "2026-05-14",
+      "sha": "9554aea077ef26edde7570d6ba0cdbdd83bc0535",
+      "pr": {
+        "number": 549,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/549",
+        "author": "lissy93",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/1862727?v=4"
+      },
+      "changes": {
+        "services": {
+          "removed": [
+            {
+              "name": "Sync.com",
+              "category": "Productivity",
+              "section": "Encrypted Cloud Storage"
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-13",
       "sha": "5691025a10fbd8ad69962ba3b881ba73ddb6b3ba",
