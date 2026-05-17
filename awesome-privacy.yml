@@ -397,36 +397,36 @@ categories:
         openSource: true
         tosdrId: 6389
         description: |
-          LibreWolf is an independent fork of Firefox that aims to provide better default
-          settings to improve on privacy, security and user freedom. Mozilla telemetry is
-          disabled, ties with Google (Safe Browsing) are severed, the content blocker
-          [uBlock Origin](https://github.com/gorhill/uBlock) is included and privacy
-          defaults are guided by research like the
-          [Arkenfox project](https://github.com/arkenfox/user.js/).
+          An independent fork of Firefox hardened for privacy by default.
+          No telemetry, uBlock Origin bundled, anti-fingerprinting, strict settings
 
       - name: Brave Browser
         url: https://brave.com
         icon: https://brave.com/static-assets/images/brave-logo-sans-text.svg
         github: brave/brave-browser
         tosdrId: 1487
+        androidApp: com.brave.browser
+        iosApp: https://apps.apple.com/gb/app/brave-browser-private-web/id1052879175
         description: |
-          Brave Browser, currently one of the most popular private browsers - it provides
-          speed, security, and privacy by blocking trackers with a clean, yet fully-featured
-          UI. It also pays you in [BAT tokens](https://basicattentiontoken.org/) for using it.
-          Brave also has Tor built-in, when you open up a private tab/ window.
+          Chromium-based browser with strong built-in ad, tracker and fingerprint blocking,
+          and timely Chromium security updates.
+          Note that Brave does bundle potentially unwanted features,
+          like crypto, rewards and AI which add bloat and increase attack surface
 
       - name: Firefox
         url: https://www.firefox.com/
         icon: https://www.mozilla.org/media/protocol/img/logos/firefox/logo.fedb52c912d6.svg
         openSource: true
         tosdrId: 188
+        androidApp: org.mozilla.firefox
+        iosApp: https://apps.apple.com/gb/app/firefox-fast-private-browser/id989804926
         description: |
-          Significantly more private, and offers some nifty privacy features than Chrome,
-          Internet Explorer and Safari. After installing, there are a couple of small tweaks
-          you will need to make, in order to secure Firefox. For a though config, see
-          [@arkenfox's user.js](https://github.com/arkenfox/user.js/). You can also follow
-          one of these guides by: [Restore Privacy](https://restoreprivacy.com/firefox-privacy/)
-          or [12Bytes](https://codeberg.org/12bytes/firefox-config-guide)
+          The main independent browser, on Mozilla's own Gecko engine rather than Chromium.
+          Reliable, long-standing, with frequent security updates, broad extension support and strong customization.
+          However telemetry is on by default, and many other preferences need to be
+          tweaked for optimum privacy. Consider using a user.js similar to
+          [arkenfox's user.js](https://github.com/arkenfox/user.js/) or follow
+          [12Bytes's guide](https://codeberg.org/12bytes/firefox-config-guide) to harden your settings
 
       - name: Tor Browser
         url: https://www.torproject.org/
@@ -436,18 +436,65 @@ categories:
         androidApp: org.torproject.torbrowser
         description: |
           Tor provides an extra layer of anonymity, by encrypting each of your requests, then
-          routing it through several nodes, making it near-impossible for you to be tracked by
-          your ISP/ provider. It does make every-day browsing a little slower, and some sites
-          may not work correctly. As with everything there are
+          routing it through several nodes, making it near-impossible for you to be tracked by your ISP.
+          While excellent for anonymity, Tor is less suited for daily browsing;
+          it's slower and some sites will be blocked or broken, among other
           [trade-offs](https://github.com/Lissy93/personal-security-checklist/issues/19)
 
-      notableMentions: >
-        **Mobile Browsers**: [Firefox Focus](https://support.mozilla.org/en-US/kb/focus) (Android/ iOS),
-        [DuckDuckGo Browser](https://help.duckduckgo.com/duckduckgo-help-pages/mobile/ios/) (Android/ iOS),
-        [Orbot](https://guardianproject.info/apps/orbot/) + [Tor](https://www.torproject.org/download/#android) (Android),
-        [Onion Browser](https://onionbrowser.com/) (iOS)<br><br>
-        **Additional Desktop**: [Nyxt](https://nyxt.atlas.engineer/), [WaterFox](https://www.waterfox.net), [Epic Privacy Browser](https://www.epicbrowser.com), [PaleMoon](https://www.palemoon.org), [Iridium](https://iridiumbrowser.de/), [Sea Monkey](https://www.seamonkey-project.org/), [Ungoogled-Chromium](https://github.com/Eloston/ungoogled-chromium), [Basilisk Browser](https://www.basilisk-browser.org/) and [IceCat](https://www.gnu.org/software/gnuzilla/)
-        12Bytes also maintains a list privacy & security [extensions](https://12bytes.org/articles/tech/firefox/firefox-extensions-my-picks/)
+      notableMentions:
+      - name: Cromite
+        url: https://www.cromite.org/
+        description: >-
+          Chromium fork and successor of Bromite. Adds built-in ad and tracker blocking,
+          removes Google service calls, and disables several fingerprinting vectors.
+          Note that patches often lag several weeks behind upstream
+      - name: WaterFox
+        url: https://www.waterfox.net
+        description: >-
+          Firefox fork with telemetry, studies and data collection removed. The legacy
+          Classic line retains support for XUL/NPAPI extensions; the current
+          Quantum-based release does not.
+      - name: PaleMoon
+        url: https://www.palemoon.org
+        description: >-
+          Independent Firefox-derived browser using its own Goanna engine. Disables
+          telemetry and retains support for legacy XUL extensions. Lagging support
+          for modern web-platform features (e.g. CSP) has led to incidents of
+          Cloudflare blocking the browser.
+      - name: Iridium
+        url: https://iridiumbrowser.de/
+        description: >-
+          Chromium fork with telemetry, background pings and most Google service
+          integrations stripped out or made opt-in.
+      - name: SeaMonkey
+        url: https://www.seamonkey-project.org/
+        description: >-
+          All-in-one internet suite (browser, mail, IRC, HTML editor) derived from the
+          Mozilla Application Suite. Receives security fixes but lags upstream Firefox
+          on features.
+      - name: Ungoogled-Chromium
+        url: https://github.com/ungoogled-software/ungoogled-chromium
+        description: >-
+          Chromium with all Google web service integrations, binary blobs and
+          background calls removed.
+          Tries to retain the default Chromium experience as closely as possible.
+          No built-in auto-updates; relies on third-party
+          rebuilds for security patches.
+      - name: Basilisk Browser
+        url: https://www.basilisk-browser.org/
+        description: >-
+          Firefox/UXP-based fork originally created by Moonchild Productions and
+          independently maintained since 2022. Retains NPAPI plugin and XUL extension
+          support dropped by mainline Firefox.
+      - name: IceCat
+        url: https://www.gnu.org/software/gnuzilla/
+        description: >-
+          GNU's fully-free Firefox fork. Removes proprietary components such as DRM
+          and EME, and bundles LibreJS to block non-free JavaScript. Tracks Firefox
+          ESR, but release cadence lags upstream and can delay security fixes.
+      furtherInfo: >
+        12Bytes maintains a list of privacy & security
+        [extensions](https://12bytes.org/articles/tech/firefox/firefox-extensions-my-picks/).
       wordOfWarning: >
         New vulnerabilities are being discovered and patched all the time - use a browser
         that is being actively maintained, in order to receive these security-critical updates.<br>
