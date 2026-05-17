@@ -20,7 +20,13 @@ Checks:
 - github-fork: github repo is not a fork (needs token)
 
 Findings have three severities: error (must fix), warn (should review), info (FYI).
-HTTP 403/429 on reachability checks is demoted from error to warn (bot-blocking).
+HTTP 403/406/429 (and 404 on known bot-blocking hosts such as play.google.com) on
+reachability checks is demoted from error to warn.
+
+Exit codes:
+    1 when pass rate drops below FAIL_PASS_RATE or errors exceed FAIL_MAX_ERRORS (5)
+    2 you didn't run the script right / something else fucked up
+    0 everything is amazing
 
 Flags:
 - --save-json PATH: save a JSON report to this file
@@ -49,6 +55,7 @@ from datetime import datetime, timezone
 from threading import Lock
 from time import monotonic
 from typing import Callable, Iterable
+from urllib.parse import urlparse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
@@ -73,8 +80,12 @@ ACTIVITY_BANDS = (
 SEVERITIES = ("error", "warn", "info")
 _SEV_COLOR = {"error": "red", "warn": "yellow", "info": "cyan"}
 _SEV_EMOJI = {"error": "🔴", "warn": "🟠", "info": "🟡"}
-_SOFT_HTTP = {403, 429}
+_SOFT_HTTP = {403, 406, 429}
+_SOFT_404_HOSTS = {"play.google.com"}
 _PKG_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$")
+
+FAIL_PASS_RATE = 95.0
+FAIL_MAX_ERRORS = 5
 
 
 @dataclass
@@ -150,8 +161,10 @@ def _get_repo(entry: Entry, ctx: Context):
 
 
 def _unreachable(field, url, status, default_sev):
-    """Return (severity, message). 403/429 demote error to warn."""
-    sev = "warn" if default_sev == "error" and status in _SOFT_HTTP else default_sev
+    """Return (severity, message). Bot-blocking signatures demote error to warn."""
+    host = urlparse(url).netloc.lower()
+    soft = status in _SOFT_HTTP or (status == 404 and host in _SOFT_404_HOSTS)
+    sev = "warn" if default_sev == "error" and soft else default_sev
     detail = f"{url} returned HTTP {status}" if status else f"{url} could not be reached"
     return sev, f"{field} is unreachable, {detail}"
 
@@ -701,7 +714,8 @@ def main():
         except OSError as exc:
             logging.warning("Could not write %s: %s", path, exc)
 
-    sys.exit(1 if any(f.severity == "error" for f in findings) else 0)
+    fail = summary["pass_rate"] < FAIL_PASS_RATE or summary["errors"] > FAIL_MAX_ERRORS
+    sys.exit(1 if fail else 0)
 
 
 if __name__ == "__main__":

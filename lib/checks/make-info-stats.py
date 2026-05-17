@@ -25,22 +25,19 @@ import sys
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
-import requests
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import utils
 
 DIFF_PATH = "/tmp/pr-diff.json"
 OUTPUT_PATH = "/tmp/repo-stats.md"
 TIMEOUT = 10
 MAX_SUBMISSIONS = 5
 USER_AGENT = "awesome-privacy-ci/1.0"
-AI_BOT_AUTHORS = [
-    "noreply@anthropic.com",
-    "devin-ai-integration[bot]",
-    "copilot-swe-agent.github.com",
-    "noreply@cursor.com",
-]
 RESTRICTIVE_LICENSES = {
     "AGPL-3.0-only", "AGPL-3.0-or-later", "SSPL-1.0", "BSL-1.0", "BUSL-1.1",
 }
+
+SESSION = utils.make_session(user_agent=USER_AGENT)
 
 SITE_INFO_URL = "https://site-info-fetch.as93.workers.dev"
 ANDROID_API_URL = "https://android-app-privacy.as93.net"
@@ -52,11 +49,8 @@ GREEN, ORANGE, RED, BLUE, WHITE = "\U0001f7e2", "\U0001f7e0", "\U0001f534", "\U0
 
 def _api_get(url, params=None, timeout=TIMEOUT, headers=None):
     """GET a URL, return parsed JSON on 200, else None."""
-    hdrs = {"User-Agent": USER_AGENT}
-    if headers:
-        hdrs.update(headers)
     try:
-        resp = requests.get(url, headers=hdrs, timeout=timeout, params=params)
+        resp = SESSION.get(url, headers=headers, timeout=timeout, params=params)
         if resp.status_code == 200:
             return resp.json()
     except Exception as e:
@@ -84,17 +78,6 @@ def relative_time(iso_str):
         y, rm = days // 365, (days % 365) // 30
         s = f"{y} year{'s' if y != 1 else ''}"
         return f"{s}, {rm} month{'s' if rm != 1 else ''}" if rm else s
-    except Exception:
-        return None
-
-
-def _days_since(iso_str):
-    """Return number of days since an ISO timestamp, or None."""
-    if not iso_str:
-        return None
-    try:
-        dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
-        return (datetime.now(timezone.utc) - dt).days
     except Exception:
         return None
 
@@ -131,28 +114,9 @@ def format_markdown(stats):
     return "\n".join(f"- {emoji} **{label}:** {value}" for emoji, label, value in stats)
 
 
-def parse_github_field(value):
-    """Parse 'owner/repo' or full URL into (owner, repo) or (None, None)."""
-    if not value:
-        return None, None
-    if value.startswith("https://github.com/"):
-        parts = value.removeprefix("https://github.com/").strip("/").split("/")
-        if len(parts) >= 2:
-            return parts[0], parts[1]
-        return None, None
-    if "/" in value:
-        parts = value.split("/")
-        if len(parts) == 2:
-            return parts[0], parts[1]
-    return None, None
-
-
 def gh_get(path, token, params=None):
     """GET a GitHub API endpoint. Returns JSON on 200, else None."""
-    headers = {"Accept": "application/vnd.github.v3+json"}
-    if token:
-        headers["Authorization"] = f"token {token}"
-    return _api_get(f"https://api.github.com{path}", params=params, headers=headers)
+    return utils.gh_get(path, token, session=SESSION, params=params, timeout=TIMEOUT, label="repos")
 
 
 def fetch_all_data(owner, repo, token):
@@ -183,23 +147,9 @@ def fetch_all_data(owner, repo, token):
 
     commits = gh_get(f"/repos/{owner}/{repo}/commits", token, {"per_page": 100})
     if commits is not None:
-        bot_set = {a.lower() for a in AI_BOT_AUTHORS}
-        ai_count = 0
-        for c in commits:
-            author = c.get("commit", {}).get("author", {})
-            email = (author.get("email") or "").lower()
-            name = (author.get("name") or "").lower()
-            if email in bot_set or name in bot_set:
-                ai_count += 1
-                continue
-            message = (c.get("commit", {}).get("message") or "").lower()
-            for line in message.splitlines():
-                if line.strip().startswith("co-authored-by:"):
-                    if any(bot in line for bot in bot_set):
-                        ai_count += 1
-                        break
+        bot_set = {a.lower() for a in utils.AI_BOT_AUTHORS}
         data["commit_count"] = len(commits)
-        data["ai_commit_count"] = ai_count
+        data["ai_commit_count"] = sum(1 for c in commits if utils.commit_has_bot(c, bot_set))
     else:
         data["commit_count"] = None
         data["ai_commit_count"] = None
@@ -232,7 +182,7 @@ def grade_stats(data):
         else:
             stats.append((GREEN, "License", lic.get("name") or spdx or "Present"))
 
-    age_days = _days_since(data.get("created_at"))
+    age_days = utils.repo_age_days(data)
     age_str = relative_time(data.get("created_at"))
     if age_days is None:
         stats.append((WHITE, "Repo Age", "Unknown"))
@@ -243,7 +193,7 @@ def grade_stats(data):
     else:
         stats.append((RED, "Repo Age", age_str))
 
-    updated_days = _days_since(data.get("pushed_at"))
+    updated_days = utils.repo_pushed_days_ago(data)
     updated_str = _friendly_date(data.get("pushed_at"))
     if updated_days is None:
         stats.append((WHITE, "Last Updated", "Unknown"))
@@ -343,16 +293,13 @@ def check_security_txt(url):
     base = f"{parsed.scheme}://{parsed.netloc}"
     for path in ("/.well-known/security.txt", "/security.txt"):
         try:
-            resp = requests.get(
-                base + path, headers={"User-Agent": USER_AGENT},
-                timeout=TIMEOUT, allow_redirects=True,
-            )
+            resp = SESSION.get(base + path, timeout=TIMEOUT, allow_redirects=True)
             if resp.status_code == 200 and "contact:" in resp.text.lower():
                 return True
         except Exception:
             continue
     try:
-        requests.head(base, headers={"User-Agent": USER_AGENT}, timeout=TIMEOUT)
+        SESSION.head(base, timeout=TIMEOUT)
         return False
     except Exception:
         return None
@@ -545,7 +492,7 @@ def _resolve_args(argv):
         result = {"name": None, "owner": None, "repo": None, "url": args.url,
                   "android": args.android, "ios": args.ios, "tosdr": args.tosdr}
         if args.repo:
-            owner, repo = parse_github_field(args.repo)
+            owner, repo = utils.parse_github_field(args.repo)
             if not owner:
                 print(f"Invalid repo format: {args.repo}", file=sys.stderr)
                 sys.exit(1)
@@ -570,7 +517,7 @@ def _resolve_args(argv):
         for yaml_key, result_key in field_map.items():
             if fields.get(yaml_key):
                 if yaml_key == "github":
-                    result["owner"], result["repo"] = parse_github_field(fields[yaml_key])
+                    result["owner"], result["repo"] = utils.parse_github_field(fields[yaml_key])
                 else:
                     result[result_key] = str(fields[yaml_key])
         if any(v for k, v in result.items() if k != "name"):

@@ -20,11 +20,6 @@ app_list_file_path = os.path.join(project_root, 'awesome-privacy.yml')
 readme_path = os.path.join(project_root, '.github/README.md')
 icon_size=14
 
-# Read the main YAML file, where all data lives
-logger.info("Reading the awesome-privacy file...")
-with open(app_list_file_path, 'r') as file:
-    data = yaml.safe_load(file)
-
 def iconElement(serviceUrl, serviceIcon):
   path = serviceIcon or f"https://icon.horse/icon/{urlparse(serviceUrl).netloc}"
   return f"<img src='{path}' width='{icon_size}' alt='' />"
@@ -73,7 +68,7 @@ def makeHref(text):
     if not text: return "#"
     return re.sub(r'[^\w\s-]', '', text.lower()).replace(" ", "-")
 
-def makeContents():
+def makeContents(data):
     contents = "<blockquote><details open>\n"
     contents += "<summary>📋 <b>Contents</b></summary>\n"
 
@@ -88,7 +83,7 @@ def makeContents():
     contents += "\n</details></blockquote>\n\n"
     return contents
 
-def makeAwesomePrivacy():
+def makeAwesomePrivacy(data):
   markdown = ""
   for category in data.get('categories'):
       markdown += f"## {category.get('name')}\n\n"
@@ -145,13 +140,6 @@ def makeAwesomePrivacy():
           markdown += "\n---\n\n"
   return markdown
 
-awesome_privacy_results = makeContents() + makeAwesomePrivacy()
-
-# Update the README.md between markers
-logger.info("Reading README.md file...")
-with open(readme_path, 'r') as file:
-    readme_content = file.read()
-
 def update_content_between_markers(content, start_marker, end_marker, new_content):
     logger.info(f"Updating content between {start_marker} and {end_marker} markers...")
     start_index = content.find(start_marker)
@@ -166,18 +154,32 @@ def update_content_between_markers(content, start_marker, end_marker, new_conten
         logger.error(f"Markers {start_marker} and {end_marker} not found.")
         return content
 
-# Update guides and resources in README.md
-readme_content = update_content_between_markers(
-  readme_content,
-  "<!-- awesome-privacy-start -->",
-  "<!-- awesome-privacy-end -->",
-  awesome_privacy_results
-)
 
-# Write back the updated content to README.md
-logger.info("Writing back to README.md...")
-with open(readme_path, 'w') as file:
-    file.write(readme_content)
+def main():
+    logger.info("Reading the awesome-privacy file...")
+    with open(app_list_file_path, 'r') as file:
+        data = yaml.safe_load(file)
 
-# All done. Time to go home for tea and medals.
-logger.info("Script completed successfully!")
+    awesome_privacy_results = makeContents(data) + makeAwesomePrivacy(data)
+
+    logger.info("Reading README.md file...")
+    with open(readme_path, 'r') as file:
+        readme_content = file.read()
+
+    readme_content = update_content_between_markers(
+        readme_content,
+        "<!-- awesome-privacy-start -->",
+        "<!-- awesome-privacy-end -->",
+        awesome_privacy_results,
+    )
+
+    logger.info("Writing back to README.md...")
+    with open(readme_path, 'w') as file:
+        file.write(readme_content)
+
+    # All done. Time to go home for tea and medals.
+    logger.info("Script completed successfully!")
+
+
+if __name__ == "__main__":
+    main()
