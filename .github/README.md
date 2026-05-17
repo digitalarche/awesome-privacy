@@ -29,7 +29,7 @@ corporations, governments, and hackers from logging, storing or selling your per
 	- [Password Managers](#password-managers) (6)
 	- [2-Factor Authentication](#2-factor-authentication) (11)
 	- [File Encryption](#file-encryption) (3)
-	- [Browsers](#browsers) (5)
+	- [Browsers](#browsers) (4)
 	- [Search Engines](#search-engines) (6)
 - **Communication**
 	- [Encrypted Messaging](#encrypted-messaging) (5)
@@ -202,11 +202,10 @@ that makes a good alternative to BitLocker.
 
 ### Browsers
 
-- **[<img src='https://librewolf.net/icon.svg' width='14' alt='' /> LibreWolf](https://librewolf.net)** - LibreWolf is an independent fork of Firefox that aims to provide better default settings to improve on privacy, security and user freedom. Mozilla telemetry is disabled, ties with Google (Safe Browsin[…](https://awesome-privacy.xyz/essentials/browsers/librewolf "View full LibreWolf report") 
-- **[<img src='https://brave.com/static-assets/images/brave-logo-sans-text.svg' width='14' alt='' /> Brave Browser](https://brave.com)** - Brave Browser, currently one of the most popular private browsers - it provides speed, security, and privacy by blocking trackers with a clean, yet fully-featured UI. It also pays you in [BAT tokens](https://basicattentiontoken.org/) fo[…](https://awesome-privacy.xyz/essentials/browsers/brave-browser "View full Brave Browser report") 
-- **[<img src='https://www.mozilla.org/media/protocol/img/logos/firefox/logo.fedb52c912d6.svg' width='14' alt='' /> Firefox](https://www.firefox.com/)** - Significantly more private, and offers some nifty privacy features than Chrome, Internet Explorer and Safari. After installing, there are a couple of small tweaks you will need to make, in order to se[…](https://awesome-privacy.xyz/essentials/browsers/firefox "View full Firefox report") 
-- **[<img src='https://www.torproject.org/static/images/favicon/favicon.ico' width='14' alt='' /> Tor Browser](https://www.torproject.org/)** - Tor provides an extra layer of anonymity, by encrypting each of your requests, then routing it through several nodes, making it near-impossible for you to be tracked by your ISP/ provider. It does mak[…](https://awesome-privacy.xyz/essentials/browsers/tor-browser "View full Tor Browser report") 
-- **[<img src='https://camo.githubusercontent.com/fc003f5ff33669908e7b929692fdbb8d10ec7df5ffa5e02e4d9becf405dd7804/68747470733a2f2f7777772e63726f6d6974652e6f72672f6170705f69636f6e2e706e67' width='14' alt='' /> Cromite](https://www.cromite.org/)** - Cromite is a Chromium fork based on Bromite with built-in support for ad blocking and an eye for privacy. 
+- **[<img src='https://librewolf.net/icon.svg' width='14' alt='' /> LibreWolf](https://librewolf.net)** - An independent fork of Firefox hardened for privacy by default. No telemetry, uBlock Origin bundled, anti-fingerprinting, strict settings 
+- **[<img src='https://brave.com/static-assets/images/brave-logo-sans-text.svg' width='14' alt='' /> Brave Browser](https://brave.com)** - Chromium-based browser with strong built-in ad, tracker and fingerprint blocking, and timely Chromium security updates. Note that Brave does bundle potentially unwanted features, like crypto, rewards[…](https://awesome-privacy.xyz/essentials/browsers/brave-browser "View full Brave Browser report") 
+- **[<img src='https://www.mozilla.org/media/protocol/img/logos/firefox/logo.fedb52c912d6.svg' width='14' alt='' /> Firefox](https://www.firefox.com/)** - The main independent browser, on Mozilla's own Gecko engine rather than Chromium. Reliable, long-standing, with frequent security updates, broad extension support and strong customization. However tel[…](https://awesome-privacy.xyz/essentials/browsers/firefox "View full Firefox report") 
+- **[<img src='https://www.torproject.org/static/images/favicon/favicon.ico' width='14' alt='' /> Tor Browser](https://www.torproject.org/)** - Tor provides an extra layer of anonymity, by encrypting each of your requests, then routing it through several nodes, making it near-impossible for you to be tracked by your ISP. While excellent for a[…](https://awesome-privacy.xyz/essentials/browsers/tor-browser "View full Tor Browser report") 
 
 <details>
 <summary>⚠️ <b>Word of Warning</b></summary>
@@ -219,8 +218,13 @@ that makes a good alternative to BitLocker.
 <details>
 <summary>✳️ <b>Notable Mentions</b></summary>
 
-> **Mobile Browsers**: [Firefox Focus](https://support.mozilla.org/en-US/kb/focus) (Android/ iOS), [DuckDuckGo Browser](https://help.duckduckgo.com/duckduckgo-help-pages/mobile/ios/) (Android/ iOS), [Orbot](https://guardianproject.info/apps/orbot/) + [Tor](https://www.torproject.org/download/#android) (Android), [Onion Browser](https://onionbrowser.com/) (iOS)<br><br> **Additional Desktop**: [Nyxt](https://nyxt.atlas.engineer/), [WaterFox](https://www.waterfox.net), [Epic Privacy Browser](https://www.epicbrowser.com), [PaleMoon](https://www.palemoon.org), [Iridium](https://iridiumbrowser.de/), [Sea Monkey](https://www.seamonkey-project.org/), [Ungoogled-Chromium](https://github.com/Eloston/ungoogled-chromium), [Basilisk Browser](https://www.basilisk-browser.org/) and [IceCat](https://www.gnu.org/software/gnuzilla/) 12Bytes also maintains a list privacy & security [extensions](https://12bytes.org/articles/tech/firefox/firefox-extensions-my-picks/)
-> </details>
+> - [Cromite](https://www.cromite.org/) - Chromium fork and successor of Bromite. Adds built-in ad and tracker blocking, removes Google service calls, and disables several fingerprinting vectors. Note that patches often lag several weeks behind upstream> - [WaterFox](https://www.waterfox.net) - Firefox fork with telemetry, studies and data collection removed. The legacy Classic line retains support for XUL/NPAPI extensions; the current Quantum-based release does not.> - [PaleMoon](https://www.palemoon.org) - Independent Firefox-derived browser using its own Goanna engine. Disables telemetry and retains support for legacy XUL extensions. Lagging support for modern web-platform features (e.g. CSP) has led to incidents of Cloudflare blocking the browser.> - [Iridium](https://iridiumbrowser.de/) - Chromium fork with telemetry, background pings and most Google service integrations stripped out or made opt-in.> - [SeaMonkey](https://www.seamonkey-project.org/) - All-in-one internet suite (browser, mail, IRC, HTML editor) derived from the Mozilla Application Suite. Receives security fixes but lags upstream Firefox on features.> - [Ungoogled-Chromium](https://github.com/ungoogled-software/ungoogled-chromium) - Chromium with all Google web service integrations, binary blobs and background calls removed. Tries to retain the default Chromium experience as closely as possible. No built-in auto-updates; relies on third-party rebuilds for security patches.> - [Basilisk Browser](https://www.basilisk-browser.org/) - Firefox/UXP-based fork originally created by Moonchild Productions and independently maintained since 2022. Retains NPAPI plugin and XUL extension support dropped by mainline Firefox.> - [IceCat](https://www.gnu.org/software/gnuzilla/) - GNU's fully-free Firefox fork. Removes proprietary components such as DRM and EME, and bundles LibreJS to block non-free JavaScript. Tracks Firefox ESR, but release cadence lags upstream and can delay security fixes.</details>
+
+<details>
+<summary>ℹ️ <b>Further Info</b></summary>
+
+> 12Bytes maintains a list of privacy & security [extensions](https://12bytes.org/articles/tech/firefox/firefox-extensions-my-picks/).
+</details>
 
 <p align="right"><sup><a href="#top">⬆️ [Back to Top]</a></sub></p>
 

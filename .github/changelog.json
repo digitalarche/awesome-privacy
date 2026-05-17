@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T09:28:32Z",
+  "generatedAt": "2026-05-17T13:04:50Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -77,6 +77,7 @@
     "7dd8e9943c9a138710901ecf1bf4775b6167629a",
     "81ed2551032e527bf5b752df5608411f91a12150",
     "824f20bf68f046a9f9bdaaf41a36a4a7e46c2d9f",
+    "8341f87fd48fbd92947238502e48a871000ef4c5",
     "83d9c485c292abc9089bdc807f34fb5367437729",
     "8428fdce3364820f6e573852b30c28b9050ed83f",
     "843a49181fb47e1800953fd8b1b5b65ff8041454",
@@ -223,9 +224,71 @@
     547,
     550,
     551,
-    552
+    552,
+    554
   ],
   "entries": [
+    {
+      "date": "2026-05-17",
+      "sha": "8341f87fd48fbd92947238502e48a871000ef4c5",
+      "pr": {
+        "number": 555,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/555",
+        "author": "lissy93",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/1862727?v=4"
+      },
+      "changes": {
+        "services": {
+          "removed": [
+            {
+              "name": "Cromite",
+              "category": "Essentials",
+              "section": "Browsers"
+            }
+          ],
+          "modified": [
+            {
+              "name": "Brave Browser",
+              "category": "Essentials",
+              "section": "Browsers",
+              "fields": [
+                "androidApp",
+                "description",
+                "iosApp"
+              ]
+            },
+            {
+              "name": "Firefox",
+              "category": "Essentials",
+              "section": "Browsers",
+              "fields": [
+                "androidApp",
+                "description",
+                "iosApp"
+              ]
+            },
+            {
+              "name": "LibreWolf",
+              "category": "Essentials",
+              "section": "Browsers",
+              "fields": [
+                "description"
+              ]
+            },
+            {
+              "name": "Tor Browser",
+              "category": "Essentials",
+              "section": "Browsers",
+              "fields": [
+                "description"
+              ]
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-14",
       "sha": "6d21892e771f8ca4a64b772e211b32db166626a6",
@@ -4597,6 +4660,16 @@
     }
   ],
   "rejections": [
+    {
+      "date": "2026-05-16",
+      "title": "Add firefox-stealth (Firefox hardening patches) to Browsers",
+      "pr": {
+        "number": 554,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/554",
+        "author": "feder-cr",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/85809106?v=4"
+      }
+    },
     {
       "date": "2026-05-14",
       "title": "Add Inspectfiles.com",
