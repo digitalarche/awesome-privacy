@@ -441,6 +441,16 @@ categories:
           it's slower and some sites will be blocked or broken, among other
           [trade-offs](https://github.com/Lissy93/personal-security-checklist/issues/19)
 
+      - name: Mullvad Browser
+        url: https://mullvad.net/browser
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/mullvad-browser.png
+        github: mullvad/mullvad-browser
+        openSource: true
+        tosdrId: 641
+        description: |
+          A Firefox-based browser maintained in collaboration between the Tor Project and Mullvad.
+          With strong anti-fingerprinting (so users look alike), no telemetry and uBlock Origin bundled
+
       notableMentions:
       - name: Cromite
         url: https://www.cromite.org/
