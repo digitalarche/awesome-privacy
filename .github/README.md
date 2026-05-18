@@ -29,7 +29,7 @@ corporations, governments, and hackers from logging, storing or selling your per
 	- [Password Managers](#password-managers) (6)
 	- [2-Factor Authentication](#2-factor-authentication) (11)
 	- [File Encryption](#file-encryption) (3)
-	- [Browsers](#browsers) (4)
+	- [Browsers](#browsers) (5)
 	- [Search Engines](#search-engines) (6)
 - **Communication**
 	- [Encrypted Messaging](#encrypted-messaging) (5)
@@ -206,6 +206,7 @@ that makes a good alternative to BitLocker.
 - **[<img src='https://brave.com/static-assets/images/brave-logo-sans-text.svg' width='14' alt='' /> Brave Browser](https://brave.com)** - Chromium-based browser with strong built-in ad, tracker and fingerprint blocking, and timely Chromium security updates. Note that Brave does bundle potentially unwanted features, like crypto, rewards[…](https://awesome-privacy.xyz/essentials/browsers/brave-browser "View full Brave Browser report") 
 - **[<img src='https://www.mozilla.org/media/protocol/img/logos/firefox/logo.fedb52c912d6.svg' width='14' alt='' /> Firefox](https://www.firefox.com/)** - The main independent browser, on Mozilla's own Gecko engine rather than Chromium. Reliable, long-standing, with frequent security updates, broad extension support and strong customization. However tel[…](https://awesome-privacy.xyz/essentials/browsers/firefox "View full Firefox report") 
 - **[<img src='https://www.torproject.org/static/images/favicon/favicon.ico' width='14' alt='' /> Tor Browser](https://www.torproject.org/)** - Tor provides an extra layer of anonymity, by encrypting each of your requests, then routing it through several nodes, making it near-impossible for you to be tracked by your ISP. While excellent for a[…](https://awesome-privacy.xyz/essentials/browsers/tor-browser "View full Tor Browser report") 
+- **[<img src='https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/mullvad-browser.png' width='14' alt='' /> Mullvad Browser](https://mullvad.net/browser)** - A Firefox-based browser maintained in collaboration between the Tor Project and Mullvad. With strong anti-fingerprinting (so users look alike), no telemetry and uBlock Origin bundled 
 
 <details>
 <summary>⚠️ <b>Word of Warning</b></summary>

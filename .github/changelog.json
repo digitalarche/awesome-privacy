@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T13:04:50Z",
+  "generatedAt": "2026-05-18T18:13:30Z",
   "processedShas": [
     "02125ec429ec1ce9c5acdec1604703cb058a7887",
     "02231fb0a59ee43f93c6d0143640284cb7587d71",
@@ -67,6 +67,7 @@
     "690d3e40da8b0ef98b93ba5bf066dc88a84027cb",
     "698e818f03fda883ec55a630bd9380d7cf214bb8",
     "69f6a2755a08caaa814201be36c9a809961b7f78",
+    "6a34ef6b931861667da7d6227c1be8f48d26facc",
     "6cf287d925558028acb263fbafa7eb412abfed17",
     "6d21892e771f8ca4a64b772e211b32db166626a6",
     "7177ba26e054a6f173ec451b420ee64d5fdef69b",
@@ -225,9 +226,34 @@
     550,
     551,
     552,
-    554
+    554,
+    557,
+    560
   ],
   "entries": [
+    {
+      "date": "2026-05-18",
+      "sha": "6a34ef6b931861667da7d6227c1be8f48d26facc",
+      "pr": {
+        "number": 556,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/556",
+        "author": "lissy93",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/1862727?v=4"
+      },
+      "changes": {
+        "services": {
+          "added": [
+            {
+              "name": "Mullvad Browser",
+              "category": "Essentials",
+              "section": "Browsers"
+            }
+          ]
+        },
+        "sections": {},
+        "categories": {}
+      }
+    },
     {
       "date": "2026-05-17",
       "sha": "8341f87fd48fbd92947238502e48a871000ef4c5",
@@ -4660,6 +4686,26 @@
     }
   ],
   "rejections": [
+    {
+      "date": "2026-05-18",
+      "title": "Add NumberOTP to Virtual Phone Numbers",
+      "pr": {
+        "number": 560,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/560",
+        "author": "DishantSinghDev2",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/122022552?v=4"
+      }
+    },
+    {
+      "date": "2026-05-17",
+      "title": "Add Koaich to Team Collaboration",
+      "pr": {
+        "number": 557,
+        "url": "https://github.com/lissy93/awesome-privacy/pull/557",
+        "author": "heysteamer",
+        "authorAvatar": "https://avatars.githubusercontent.com/u/195606194?v=4"
+      }
+    },
     {
       "date": "2026-05-16",
       "title": "Add firefox-stealth (Firefox hardening patches) to Browsers",
